@@ -1,0 +1,248 @@
+{
+	"info": {
+		"_postman_id": "d6ed7d85-10a3-439b-9641-0a671d169710",
+		"name": "TestClean",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3535562"
+	},
+	"item": [
+		{
+			"name": "Topic",
+			"item": [
+				{
+					"name": "create-topic",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"topicTitle\": \"ยา\"\r\n    // \"topicTitle\": \"ยาบ้า\"\r\n    // \"topicTitle\": \"ยาม้า\"\r\n    // \"topicTitle\": \"ยาอี\"\r\n    // \"topicTitle\": \"ยาคูล\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/topic/create-topic",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"topic",
+								"create-topic"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-topics",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/topic/get-topics?limit=10&offset=0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"topic",
+								"get-topics"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "offset",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Topic Item",
+			"item": [
+				{
+					"name": "create-topic-item",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"topicId\": 1,\r\n\t\"topicItemTitle\": \"item1\"\r\n    \r\n\t// \"topicId\": 1,\r\n\t// \"topicItemTitle\": \"item2\"\r\n    \r\n\t// \"topicId\": 1,\r\n\t// \"topicItemTitle\": \"item3\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/topic-item/create-item",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"topic-item",
+								"create-item"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-topic-item",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"topicItemId\": 1,\r\n\t\"topicId\": 1,\r\n    \"topicItemTitle\": \"item1 update\"\r\n\r\n\t// \"topicItemId\": 2,\r\n\t// \"topicId\": 1,\r\n    // \"topicItemTitle\": \"item2 update\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/topic-item/update-item",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"topic-item",
+								"update-item"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-delete-status",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"topicItemId\": 1,\r\n\t\"topicId\": 1,\r\n    \"isDeleted\": false\r\n\r\n\t// \"topicItemId\": 2,\r\n\t// \"topicId\": 1,\r\n    // \"isDeleted\": false\r\n    \r\n\t// \"topicItemId\": 3,\r\n\t// \"topicId\": 1,\r\n    // \"isDeleted\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/topic-item/update-delete-status",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"topic-item",
+								"update-delete-status"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-sequence",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"topicItemId\": 1,\r\n        \"topicId\": 1,\r\n        \"sequence\": 3\r\n    },\r\n    {\r\n        \"topicItemId\": 2,\r\n        \"topicId\": 1,\r\n        \"sequence\": 2\r\n    },\r\n    {\r\n        \"topicItemId\": 3,\r\n        \"topicId\": 1,\r\n        \"sequence\": 1\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/topic-item/update-sequence",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"topic-item",
+								"update-sequence"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete-topic-item",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/topic-item/delete-item/1/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"topic-item",
+								"delete-item",
+								"1",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-topics-items",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/topic-item/get-items/1?limit=10&offset=0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"topic-item",
+								"get-items",
+								"1"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "offset",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
